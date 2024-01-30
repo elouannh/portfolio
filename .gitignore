@@ -15,6 +15,7 @@ jspm_packages/
 bower_components/
 
 # Angular-specific
+.angular
 /dist/
 /e2e/*.log
 /e2e/*.screenshot.png

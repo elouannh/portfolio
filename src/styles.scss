@@ -1,20 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
 
 :root {
-  --gunmetal: "#092327";
-  --dark-slate-gray: "#0b5351";
-  --light-sea-green: "#00a9a5";
-  --air-force-blue: "#4e8098";
-  --light-sky-blue: "#90c2e7";
-  --dark: "#252525";
-  --white: "#ffffff";
+  --gunmetal: #092327;
+  --dark-slate-gray: #0b5351;
+  --light-sea-green: #00a9a5;
+  --air-force-blue: #4e8098;
+  --light-sky-blue: #90c2e7;
+  --black: #141414;
+  --dark: #252525;
+  --white: #ffffff;
 
   --spinnaker: "Spinnaker", "Arial", serif;
   --inter: "Inter", "Helvetica", sans-serif;
   --noto-sans: "Fira Code", "Courier New", monospace;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark);
+}
+
 .main-title {
   font-family: var(--spinnaker);
   color: var(--gunmetal);
+}
+
+.black-section {
+  background-color: var(--black);
 }

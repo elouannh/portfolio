@@ -25,6 +25,8 @@
 @mixin inter { font-family: var(--inter); }
 @mixin fira-code { font-family: var(--fira-code); }
 
+@mixin flex-and-align { display: flex; align-items: center; }
+
 $inter-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 $fira-code-weights: 300, 400, 500, 600, 700;
 
@@ -51,5 +53,5 @@ $fira-code-weights: 300, 400, 500, 600, 700;
 }
 
 body {
-  background-color: var(--dark);
+  background-color: var(--black);
 }

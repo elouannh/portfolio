@@ -54,3 +54,6 @@ bower_components/
 # Windows
 Thumbs.db
 Desktop.ini
+
+# Secret environment variables
+src/env

@@ -1,8 +1,31 @@
-.header-title {
-  font-size: 30px;
-}
+@import "../../styles.scss";
+
+$padding-main: 70px 150px;
+$font-size-header: 30px;
+$logo-size: 40px;
+
+main { padding: $padding-main; }
+
+.header-title { font-size: 30px; }
 
 .header-logo {
-  width: 50px;
-  height: 50px;
+  width: $logo-size;
+  height: $logo-size;
+}
+
+#header-nav {
+  @include flex-and-align;
+  justify-content: space-between;
+}
+
+li {
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+a { @include flex-and-align; text-decoration: none; }
+
+ul {
+  @include flex-and-align;
+  list-style: none;
 }

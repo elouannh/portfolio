@@ -6,26 +6,31 @@ $logo-size: 40px;
 
 main { padding: $padding-main; }
 
-.header-title { font-size: 30px; }
-
-.header-logo {
-  width: $logo-size;
-  height: $logo-size;
-}
-
-#header-nav {
-  @include flex-and-align;
-  justify-content: space-between;
-}
+a { @include flex-and-align; text-decoration: none; }
 
 li {
   text-decoration: none;
   margin-left: 20px;
 }
 
-a { @include flex-and-align; text-decoration: none; }
-
 ul {
   @include flex-and-align;
   list-style: none;
+}
+
+.header-logo {
+  width: $logo-size;
+  height: $logo-size;
+}
+
+.header-title { font-size: $font-size-header; }
+
+#domain-name {
+  @include flex-and-align;
+  > div:first-child { margin-right: 20px; }
+}
+
+#header-nav {
+  @include flex-and-align;
+  justify-content: space-between;
 }

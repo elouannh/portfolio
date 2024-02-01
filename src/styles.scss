@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
@@ -13,25 +14,34 @@
   --white: #ffffff;
 
   --spinnaker: "Spinnaker", "Arial", serif;
+  --bebas-neue: "Bebas Neue", "Arial", serif;
   --inter: "Inter", "Helvetica", sans-serif;
   --fira-code: "Fira Code", "Courier New", monospace;
 }
 
-.white { color: var(--white); }
+.white, .white > * { color: var(--white); }
 
 .black-background { background-color: var(--black); }
+.dark-background { background-color: var(--dark); }
 
 @mixin spinnaker { font-family: var(--spinnaker); }
+@mixin bebas-neue { font-family: var(--bebas-neue); }
 @mixin inter { font-family: var(--inter); }
 @mixin fira-code { font-family: var(--fira-code); }
 
 @mixin flex-and-align { display: flex; align-items: center; }
+@mixin flex-and-align-start { display: flex; align-items: start; }
+@mixin flex-and-align-end { display: flex; align-items: end; }
 
 $inter-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 $fira-code-weights: 300, 400, 500, 600, 700;
 
 .spinnaker-400 {
   @include spinnaker;
+  font-weight: 400;
+}
+.bebas-neue-400 {
+  @include bebas-neue;
   font-weight: 400;
 }
 @each $weight in $inter-weights {
@@ -54,4 +64,13 @@ $fira-code-weights: 300, 400, 500, 600, 700;
 
 body {
   background-color: var(--black);
+}
+
+.dark-chips {
+  @include fira-code;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: var(--dark);
+  font-size: 20px;
 }

@@ -1,0 +1,28 @@
+#about-me-label {
+  margin-bottom: -25px;
+
+  @media screen and (max-width: 760px) { margin-bottom: -15px; }
+}
+
+#about-me-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 75vw;
+
+  margin: 75px auto auto;
+  @media screen and (max-width: 760px) { margin: -50px auto auto; }
+}
+
+#about-me-main-paragraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 75px auto auto;
+  width: 50vw;
+  text-align: center;
+
+  @media screen and (max-width: 760px) { width: 90vw; }
+}

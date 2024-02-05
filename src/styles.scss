@@ -17,6 +17,9 @@
   --bebas-neue: "Bebas Neue", "Arial", serif;
   --inter: "Inter", "Helvetica", sans-serif;
   --fira-code: "Fira Code", "Courier New", monospace;
+
+  --paragraph-font-size: 24px;
+  --paragraph-font-spacing: 1px;
 }
 
 .white, .white > * { color: var(--white); }
@@ -64,6 +67,15 @@ $fira-code-weights: 300, 400, 500, 600, 700;
 
 body {
   background-color: var(--black);
+  user-select: none;
+}
+
+.cursor-light-on {
+  cursor: url('assets/cursors/white.png'), auto;
+}
+
+.cursor-light-off {
+  cursor: url('assets/cursors/purple.png'), auto;
 }
 
 .dark-chips {
@@ -73,4 +85,33 @@ body {
   border-radius: 20px;
   background-color: var(--dark);
   font-size: 20px;
+}
+
+.section-title {
+  @include bebas-neue;
+  color: var(--white);
+  font-size: 140px;
+  letter-spacing: 10px;
+
+  @media screen and (max-width: 760px) { font-size: 20vw; }
+}
+
+.section-paragraph {
+  @include inter;
+  color: var(--white);
+  font-size: var(--paragraph-font-size);
+  letter-spacing: var(--paragraph-font-spacing);
+
+  @media screen and (max-width: 760px) { font-size: 3vw; }
+}
+
+.code-line {
+  @include fira-code;
+  padding: 1px 5px 1px 5px;
+  border-radius: 5px;
+  background-color: var(--dark);
+  font-size: var(--paragraph-font-size);
+  letter-spacing: var(--paragraph-font-spacing);
+
+  @media screen and (max-width: 760px) { font-size: 3vw; }
 }

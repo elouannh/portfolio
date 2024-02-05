@@ -1,2 +1,10 @@
-<app-header></app-header>
-<app-about-me></app-about-me>
+<div (mousemove)="onMouseMove($event)" (mousedown)="onMouseClick($event)" [style.background]="backgroundStyle">
+  <app-header></app-header>
+  <main>
+    <app-about-me></app-about-me>
+    <app-experiences></app-experiences>
+    <app-projects></app-projects>
+    <app-stuff></app-stuff>
+  </main>
+  <app-contact></app-contact>
+</div>

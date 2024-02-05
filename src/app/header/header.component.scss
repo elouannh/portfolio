@@ -27,10 +27,19 @@ ul {
 
 #domain-name {
   @include flex-and-align;
-  > div:first-child { margin-right: 20px; }
+
+  > div:first-child { margin-right: 0.5vw; }
+
+  @media screen and (max-width: 760px) { display: none; }
 }
 
 #header-nav {
   @include flex-and-align;
   justify-content: space-between;
+}
+
+#header-nav-links {
+  @media screen and (max-width: 760px) {
+    margin-left: -10px;
+  }
 }

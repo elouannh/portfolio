@@ -87,13 +87,22 @@ body {
   font-size: 20px;
 }
 
-.section-title {
+.main-title {
   @include bebas-neue;
   color: var(--white);
   font-size: 140px;
   letter-spacing: 10px;
 
   @media screen and (max-width: 760px) { font-size: 20vw; }
+}
+
+.section-title {
+  @include bebas-neue;
+  color: var(--white);
+  font-size: 90px;
+  letter-spacing: 10px;
+
+  @media screen and (max-width: 760px) { font-size: 13vw; }
 }
 
 .section-paragraph {

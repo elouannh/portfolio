@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, Inject  } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+
+enum TOGGLE_MODE {
+  OFF,
+  ON,
+}
 
 @Component({
   selector: 'app-root',
@@ -6,35 +12,61 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  public title: string = 'portfolio';
-  public toggled: boolean | 'unset' = 'unset';
   public backgroundStyle: string = 'var(--black)';
+  public toggleMode: TOGGLE_MODE = TOGGLE_MODE.OFF;
+  public mouseX: number = 0;
+  public mouseY: number = 0;
+  public scrollX: number = 0;
+  public scrollY: number = 0;
 
-  public enableLight(event: MouseEvent): void {
-    if (!this.toggled) {
-      this.toggled = true;
-      document.body.classList.add('cursor-light-on');
-      document.body.classList.remove('cursor-light-off');
-    }
-    const x: number = event.pageX;
-    const y: number = event.pageY;
+  constructor(private renderer: Renderer2, @Inject(DOCUMENT) private document: Document) { }
+
+  public light(): void {
+    const [x, y]: [number, number] = [this.mouseX + this.scrollX, this.mouseY + this.scrollY];
     this.backgroundStyle = `radial-gradient(circle at ${x}px ${y}px, rgba(150, 150, 155, 0.8), black 2000px)`;
   }
 
-  public disableLight(): void {
-    document.body.classList.add('cursor-light-off');
-    document.body.classList.remove('cursor-light-on');
-    this.toggled = false;
-    this.backgroundStyle = `var(--black)`;
+  public toggleLight(event: MouseEvent): void {
+    document.body.classList.remove('cursor-light-off', 'cursor-light-on');
+
+    switch (this.toggleMode) {
+      default:
+      case TOGGLE_MODE.ON:
+        this.toggleMode = TOGGLE_MODE.OFF;
+        document.body.classList.add('cursor-light-off');
+        this.backgroundStyle = `var(--black)`;
+        break;
+      case TOGGLE_MODE.OFF:
+        this.toggleMode = TOGGLE_MODE.ON;
+        document.body.classList.add('cursor-light-on');
+        this.light();
+        break;
+    }
+  }
+
+  public animateLight(): void {
+    if (this.toggleMode === TOGGLE_MODE.ON) this.light();
   }
 
   onMouseMove(event: MouseEvent): void {
-    if (this.toggled === "unset") this.enableLight(event);
-    else if (this.toggled) this.enableLight(event);
+    this.mouseX = event.clientX;
+    this.mouseY = event.clientY;
+    if (this.isPC()) this.animateLight();
   }
 
   onMouseClick(event: MouseEvent): void {
-    if (this.toggled) this.disableLight();
-    else this.enableLight(event);
+    if (this.isPC()) this.toggleLight(event);
+  }
+
+  ngOnInit() {
+    this.renderer.listen(this.document, 'scroll', (event) => {
+      this.scrollX = window.scrollX;
+      this.scrollY = window.scrollY;
+      this.animateLight();
+    });
+  }
+
+  public isPC(): boolean {
+    return !('ontouchstart' in window || navigator.maxTouchPoints > 1);
   }
 }

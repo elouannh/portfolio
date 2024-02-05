@@ -4,7 +4,12 @@ $padding-main: 70px 150px;
 $font-size-header: 30px;
 $logo-size: 40px;
 
-main { padding: $padding-main; }
+main {
+  padding: 70px 10vw;
+  @media screen and (min-width: 760px) {
+    padding: 70px 150px;
+  }
+}
 
 a { @include flex-and-align; text-decoration: none; }
 
@@ -33,13 +38,13 @@ ul {
   @media screen and (max-width: 760px) { display: none; }
 }
 
-#header-nav {
-  @include flex-and-align;
-  justify-content: space-between;
+@media screen and (min-width: 760px) {
+  #header-nav {
+    @include flex-and-align;
+    justify-content: space-between;
+  }
 }
 
 #header-nav-links {
-  @media screen and (max-width: 760px) {
-    margin-left: -10px;
-  }
+  @media screen and (max-width: 760px) { margin-left: -10px; }
 }

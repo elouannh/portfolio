@@ -1,7 +1,7 @@
 #about-me-label {
   margin-bottom: -25px;
 
-  @media screen and (max-width: 760px) { margin-bottom: -15px; }
+  @media screen and (max-width: 760px) { margin-bottom: -3vw; }
 }
 
 #about-me-head {
@@ -12,7 +12,7 @@
   width: 75vw;
 
   margin: 75px auto auto;
-  @media screen and (max-width: 760px) { margin: -50px auto auto; }
+  @media screen and (max-width: 760px) { margin: -45px auto auto; }
 }
 
 #about-me-main-paragraph {
@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 75px auto auto;
+  margin: 75px auto 300vh;
   width: 50vw;
   text-align: center;
 

@@ -1,7 +1,8 @@
 <div (mousemove)="onMouseMove($event)" (mousedown)="onMouseClick($event)" [style.background]="backgroundStyle">
   <app-header></app-header>
-  <main>
+  <main id="app-root-main">
     <app-about-me></app-about-me>
+    <span class="divider"></span>
     <app-experiences></app-experiences>
     <app-projects></app-projects>
     <app-stuff></app-stuff>

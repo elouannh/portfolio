@@ -102,7 +102,7 @@ body {
   font-size: 90px;
   letter-spacing: 10px;
 
-  @media screen and (max-width: 760px) { font-size: 13vw; }
+  @media screen and (max-width: 760px) { font-size: 9vw; }
 }
 
 .section-paragraph {
@@ -123,4 +123,10 @@ body {
   letter-spacing: var(--paragraph-font-spacing);
 
   @media screen and (max-width: 760px) { font-size: 3vw; }
+}
+
+.divider {
+  height: 10px;
+  width: 40vw;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.25);
 }

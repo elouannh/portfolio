@@ -1,4 +1,4 @@
-main {
+main#app-root-main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8,3 +8,6 @@ main {
   margin: 75px auto auto;
 }
 
+main > *:not(:first-child) {
+  margin-bottom: 20vh;
+}
